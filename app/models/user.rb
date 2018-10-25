@@ -14,7 +14,7 @@ class User < ApplicationRecord
       gid: auth[:google_id]
     }
     
-    user.save!
+    user.save
     user      
   end
 end

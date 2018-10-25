@@ -24,7 +24,7 @@ describe "Users API" do
     expect(user.gid).to eq(user_params[:google_id])
   end
 
-  xit "returns a 400 if the user is not successfully created" do
+  it "returns a 400 if the user is not successfully created" do
     user_params = { name: "carrot" }
 
     post "/api/v1/users", params: {user: user_params}
