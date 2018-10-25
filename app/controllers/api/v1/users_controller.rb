@@ -2,18 +2,18 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
 
   def index
-    render json: User.all
+    users = User.all
+    render json: users
   end
 
   def create 
     user = User.update_or_create(user_params)
-    if user
+    if user.save
       render json: user
     else
-      render status: 400
+      render json: {error: 'Unable to create user entry'}, status: 400
     end
   end
-
 
   private
 
