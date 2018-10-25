@@ -8,8 +8,11 @@ class Api::V1::EventsController < ApplicationController
 
   def create 
     event = Event.new(event_params)
-    if event.save
-      render json: event
+    user = User.find_by(gid: user_params[:google_id])
+
+    if event.save && user
+      UserEvent.create!(event: event, user: user)
+      render json: {message: "Successfully added #{event.name} to #{user.first_name}'s watch list"}, status: 201
     else
       render json: {error: 'Unable to create event entry'}, status: 404
     end
@@ -18,6 +21,10 @@ class Api::V1::EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :venue, :location)
+      params.require(:event).permit(:name, :e_id, :url, :img, :date, :venue_name, :address, :lat, :lng, :distance)
+    end
+
+    def user_params
+      params.require(:user).permit(:given_name, :family_name, :email, :google_id) 
     end
 end
