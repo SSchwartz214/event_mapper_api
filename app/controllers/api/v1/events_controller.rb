@@ -8,11 +8,11 @@ class Api::V1::EventsController < ApplicationController
 
   def create 
     event = Event.new(event_params)
-    user = User.find_by(gid: user_params[:google_id])
+    user = User.update_or_create(user_params)
 
-    if event.save && user
+    if event.save && user && !user.events.pluck(:e_id).include?(event.e_id)
       UserEvent.create!(event: event, user: user)
-      render json: {message: "Successfully added #{event.name} to #{user.first_name}'s watch list"}, status: 201
+      render json: {message: "Successfully added #{event.name} with id: #{event.e_id}"}, status: 201
     else
       render json: {error: 'Unable to create event entry'}, status: 404
     end
