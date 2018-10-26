@@ -14,6 +14,6 @@ describe "Events API" do
     expect(UserEvent.last.event.id).to eq(Event.last.id)
     expect(UserEvent.last.user.id).to eq(seth.id)
     expect(response.status).to eq(201)
-    expect(JSON.parse(response.body)['message']).to eq("Successfully added #{Event.last.name} to #{seth.first_name}'s watch list")
+    expect(JSON.parse(response.body)['message']).to eq("Successfully added #{Event.last.name} with id: #{Event.last.e_id}")
   end
 end
