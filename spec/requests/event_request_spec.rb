@@ -13,7 +13,7 @@ describe "Events API" do
     expect(UserEvent.count).to eq(count + 1)
     expect(UserEvent.last.event.id).to eq(Event.last.id)
     expect(UserEvent.last.user.id).to eq(seth.id)
-    expect(response.status).to eq(201)
-    expect(JSON.parse(response.body)['message']).to eq("Successfully added #{Event.last.name} with id: #{Event.last.e_id}")
+    expect(response.status).to eq(200)
+    expect(JSON.parse(response.body)['id']).to eq(Event.last.id)
   end
 end
