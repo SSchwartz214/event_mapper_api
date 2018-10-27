@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       
       resources :users, only: [:index, :create] do
-        resources :events, only: [:create]
+        post 'events', to: 'events#create'
+        delete 'events/:id', to: 'user_events#destroy'
       end
     end 
   end
