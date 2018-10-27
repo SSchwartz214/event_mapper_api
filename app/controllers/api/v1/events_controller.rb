@@ -11,8 +11,8 @@ class Api::V1::EventsController < ApplicationController
     user = User.update_or_create(user_params)
 
     if event.save && user && !user.events.pluck(:e_id).include?(event.e_id)
-      UserEvent.create!(event: event, user: user)
-      render json: event
+      user_event = UserEvent.create!(event: event, user: user)
+      render json: { event: event, user_event: user_event }
     else
       render json: {error: 'Unable to create event entry'}, status: 404
     end

@@ -14,6 +14,7 @@ describe "Events API" do
     expect(UserEvent.last.event.id).to eq(Event.last.id)
     expect(UserEvent.last.user.id).to eq(seth.id)
     expect(response.status).to eq(200)
-    expect(JSON.parse(response.body)['id']).to eq(Event.last.id)
+    expect(JSON.parse(response.body)['event']['id']).to eq(Event.last.id)
+    expect(JSON.parse(response.body)['user_event']['id']).to eq(UserEvent.last.id)
   end
 end
