@@ -1,7 +1,7 @@
 - [] Implemented
 - [] Reviewed
 
-# Neccessary checkmarks:
+# Necessary checkmarks:
 - [] The code will run locally
 
 ## Type of change
