@@ -2,8 +2,10 @@ class Api::V1::UserEventsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
 
   def index
-    events = Event.where
-    render json: user_events
+    user = User.find(params[:user_id])
+
+    events = user.events
+    render json: events
   end
 
   def destroy
