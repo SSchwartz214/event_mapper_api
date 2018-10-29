@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :email, :gid
+  validates_presence_of :first_name, :last_name, :email, :gid, :imageUrl
 
   has_many :user_events
   has_many :events, through: :user_events
