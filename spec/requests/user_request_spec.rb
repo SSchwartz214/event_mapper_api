@@ -14,7 +14,7 @@ describe "Users API" do
   end
 
   it "can create a new user" do
-    user_params = { given_name: "seth", family_name: "schwartz", email: "seth@gmail.com", google_id: "12345" }
+    user_params = { given_name: "seth", family_name: "schwartz", email: "seth@gmail.com", google_id: "12345", imageUrl: "wwww.image.com" }
 
     post "/api/v1/users", params: {user: user_params}
     user = User.last

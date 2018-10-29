@@ -4,5 +4,6 @@ FactoryBot.define do
     last_name { "MyString" }
     email { "MyString" }
     gid { "MyString" }
+    imageUrl { "MyString" }
   end
 end

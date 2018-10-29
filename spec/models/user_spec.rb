@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of(:last_name)}
     it {should validate_presence_of(:email)}
     it {should validate_presence_of(:gid)}
+    it {should validate_presence_of(:imageUrl)}
   end
 
   describe "Relationships" do
@@ -19,7 +20,8 @@ RSpec.describe User, type: :model do
         given_name: "Seth",
         family_name: "Schwartz",
         email: "seth@gmail.com",
-        google_id: "12345"
+        google_id: "12345",
+        imageUrl: "www.image.com"
       }
 
       User.update_or_create(auth)
@@ -29,6 +31,7 @@ RSpec.describe User, type: :model do
       expect(new_user.last_name).to eq("Schwartz")
       expect(new_user.email).to eq("seth@gmail.com")
       expect(new_user.gid).to eq("12345")
+      expect(new_user.imageUrl).to eq("www.image.com")
     end
   end
 end

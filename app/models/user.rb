@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :email, :gid
+  validates_presence_of :first_name, :last_name, :email, :gid, :imageUrl
 
   has_many :user_events
   has_many :events, through: :user_events
@@ -11,7 +11,8 @@ class User < ApplicationRecord
       first_name: auth[:given_name],
       last_name: auth[:family_name],
       email: auth[:email],
-      gid: auth[:google_id]
+      gid: auth[:google_id],
+      imageUrl: auth[:imageUrl]
     }
     
     user.save
