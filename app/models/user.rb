@@ -11,7 +11,8 @@ class User < ApplicationRecord
       first_name: auth[:given_name],
       last_name: auth[:family_name],
       email: auth[:email],
-      gid: auth[:google_id]
+      gid: auth[:google_id],
+      imageUrl: auth[:imageUrl]
     }
     
     user.save
