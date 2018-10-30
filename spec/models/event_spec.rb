@@ -12,6 +12,7 @@ RSpec.describe Event, type: :model do
     it {should validate_presence_of(:lat)}
     it {should validate_presence_of(:lng)}
     it {should validate_presence_of(:distance)}
+    it {should validate_presence_of(:unix)}
   end
 
   describe "Relationships" do

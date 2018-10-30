@@ -5,7 +5,7 @@ describe "Events API" do
     seth = create(:user, gid: "12345")
     count = UserEvent.count
 
-    event_params = { name: 'Drake', e_id: '123', url: 'www.drake.com', img: 'drake.jpeg', date: "Sun, Dec 9, 2018 6:00 PM", venue_name: "Pepsi Center", address: "2009 Larimer St Denver, CO 80205", lat: "39.1", lng: "-11.2", distance: "1.3" }
+    event_params = { name: 'Drake', e_id: '123', url: 'www.drake.com', img: 'drake.jpeg', date: "Sun, Dec 9, 2018 6:00 PM", venue_name: "Pepsi Center", address: "2009 Larimer St Denver, CO 80205", lat: "39.1", lng: "-11.2", distance: "1.3", unix: "2019-04-02T01:30:00Z" }
     user_params = { given_name: "seth", family_name: "schwartz", email: "seth@gmail.com", google_id: "12345" }
 
     post "/api/v1/users/#{seth.id}/events/", params: {event: event_params, user: user_params }
