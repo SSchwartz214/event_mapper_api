@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rack-cors', require: 'rack/cors'
 gem 'sidekiq'
 gem 'figaro'
+gem 'sinatra'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
