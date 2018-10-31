@@ -7,12 +7,13 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create 
-    event = Event.new(event_params)
-    user = User.update_or_create(user_params)
+    @event = Event.new(event_params)
+    @user = User.update_or_create(user_params)
 
-    if event.save && user && !user.events.pluck(:e_id).include?(event.e_id)
-      UserEvent.create!(event: event, user: user)
-      render json: { event: event }
+    if @event.save && @user && !@user.events.pluck(:e_id).include?(@event.e_id)
+      UserEvent.create!(event: @event, user: @user)
+      WatchlistSenderJob.perform_later(@user, @event)
+      render json: { event: @event }
     else
       render json: {error: 'Unable to create event entry'}, status: 404
     end
