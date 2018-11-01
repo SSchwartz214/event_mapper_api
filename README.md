@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the backend API that supplies [Event Mapper](https://event-mapper-fe.herokuapp.com/), an app that locates and displays events hosted by Ticket Master on a map.  The user then can add events to their watchlist to view and purchase tickets for at a later date.
+This is the backend API that supplies [Event Mapper](https://event-mapper-fe.herokuapp.com/), an app that locates and displays events hosted by Ticket Master on a map.  The user can then add events to their watchlist to view and purchase tickets at a later date.
 
 
 ## Rails version: 5.1.6
