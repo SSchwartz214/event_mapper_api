@@ -1,4 +1,5 @@
 # Event Mapper API
+[![Build Status](https://travis-ci.com/SSchwartz214/capstone.svg?branch=master)](https://travis-ci.com/SSchwartz214/capstone)
 
 ## Description
 
