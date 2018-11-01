@@ -34,7 +34,7 @@ $ rspec
 
 * Production Link
 
-[Event Mapper API](https://event-mapper-api.herokuapp.com/)
+  [Event Mapper API](https://event-mapper-api.herokuapp.com/)
 
 ## API Endpoints
 
