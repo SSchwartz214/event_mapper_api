@@ -1,11 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
 
-  def index
-    users = User.all
-    render json: users
-  end
-
   def create 
     user = User.update_or_create(user_params)
     if user.save
