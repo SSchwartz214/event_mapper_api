@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the backend API that supplies [Event Mapper](https://event-mapper-fe.herokuapp.com/), an app that locates and displays events hosted by Ticket Master on a map.  The user can then add events to their watchlist to view and purchase tickets at a later date.
+This is the backend API that supplies [Event Mapper](https://event-mapper-fe.herokuapp.com/), an app that locates and displays events hosted by Ticket Master on a map.  The user can then add events to their watchlist to view and purchase tickets to at a later date.
 
 
 ## Rails version: 5.1.6
@@ -57,4 +57,10 @@ $ rspec
    
 * DELETE /api/v1/users/:user_id/events/:id
    * Removes the event with :id from the user with :user_id
+   
+ ## Contributors
+
+* Seth Schwartz: https://github.com/SSchwartz214
+* Paul Kim: https://github.com/sojurner
+* Joel O'Connor: https://github.com/JoOCon
   
