@@ -1,24 +1,61 @@
-# README
+# Event Mapper API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This is the backend API to Event Mapper which supplies [Event Mapper](https://event-mapper-fe.herokuapp.com/) which is an app that locates and displays events hosted by Ticket Master on a map.  The user then can add events to their watchlist to view and purchase tickets for at a later date.
 
-* Ruby version
 
-* System dependencies
+## Rails version: 5.1.6
 
-* Configuration
+## Configuration
 
-* Database creation
+* Clone the repository:
+```
+git clone https://github.com/SSchwartz214/event_mapper_api.git
+```
 
-* Database initialization
+* Setup:
+```
+$ bundle install
+$ bundle update
+$ rake db:{create,migrate}
+```
+
+* To view locally:
+```
+$ rails s
+visit 'localhost:3000' in your browser
+```
 
 * How to run the test suite
+```
+$ rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* Production Link
 
-* Deployment instructions
+[Event Mapper API](https://event-mapper-api.herokuapp.com/)
 
-* ...
+## API Endpoints
+
+### Users:
+
+* POST /api/v1/users
+
+  * Allows creating a new user with the parameters
+  ```
+    example parameters:
+   { "user": { given_name: "seth", family_name: "schwartz", email: "seth@gmail.com", google_id: "12345", imageUrl: "wwww.image.com" } }
+  ```
+
+### Events:
+
+* GET /api/v1/users/:user_id/events
+   * Returns all the events associated with the user with an id specified by :user_id 
+
+* POST /api/v1/users/:user_id/events
+   * Adds an event to the user with :user_id
+   
+* DELETE /api/v1/users/:user_id/events/:id
+   * Removes the event with :id from the user with :user_id
+  
