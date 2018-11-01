@@ -42,9 +42,8 @@ $ rspec
 
 * POST /api/v1/users
 
-  * Allows creating a new user with the parameters
+  * Allows creating a new user with the parameters:
   ```
-    example parameters:
    { "user": { given_name: "seth", family_name: "schwartz", email: "seth@gmail.com", google_id: "12345", imageUrl: "wwww.image.com" } }
   ```
 
