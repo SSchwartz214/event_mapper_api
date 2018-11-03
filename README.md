@@ -61,7 +61,7 @@ $ rspec
    
  ## Contributors
 
-* Seth Schwartz: https://github.com/SSchwartz214
-* Paul Kim: https://github.com/sojurner
-* Joel O'Connor: https://github.com/JoOCon
+* [Seth Schwartz](https://github.com/SSchwartz214)
+* [Paul Kim](https://github.com/sojurner)
+* [Joel O'Connor](https://github.com/JoOCon)
   
